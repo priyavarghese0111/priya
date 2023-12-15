@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<script>
+  // Bootstrap 5 initialization
+  var alertList = document.querySelectorAll('.alert');
+  alertList.forEach(function (alert) {
+    new bootstrap.Alert(alert);
+  });
+</script>
+<body>
+<div class="wrapper">
+    <form action="{% url 'credentials:register' %}" method="POST">
+           {% csrf_token %}
+      <h2>Register</h2>
+        <div class="input-field">
+
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+      </div>
+      <div class="input-field">
+
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+      </div>
+        <div class="input-field">
+
+        <input type="password" name="confirmpassword" placeholder="Confirm your password" required>
+
+      </div>
+
+      <button type="submit">Register</button>
+
+    </form>
+  </div>
+
+
+
+{% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+</body>
+</html>

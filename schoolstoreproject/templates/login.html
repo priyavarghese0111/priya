@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+<body>
+
+<div class="wrapper">
+    <form action="{% url 'credentials:login' %}" method="POST">
+           {% csrf_token %}
+      <h2>Login</h2>
+        <div class="input-field">
+
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+      </div>
+      <div class="input-field">
+
+        <input type="password"name="password" placeholder="Enter your password" required>
+
+      </div>
+
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="{% url 'credentials:register' %}">Register</a></p>
+      </div>
+    </form>
+  </div>
+{% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+</body>
+</html>
+

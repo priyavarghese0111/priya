@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit">
+</form>
+<div>
+    <a href="credentials/register">Create an account </a>
+</div>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+
+https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg
+
+
+<label for="exampleFormControlSelect2">Department</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="exampleFormControlSelect2">
+                <option>Computer Science</option>
+                <option>Commerce</option>
+                <option>Humanities</option>
+                <option>Bio Science</option>
+            </select>

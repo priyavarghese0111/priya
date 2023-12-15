@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="alert alert-primary" role="alert">
+  Your Order Confirmed Successfully
+</div>
+
+<div>
+    <a href="{% url 'schoolstoreapp:home' %}">Return to Home Page</a>
+</div>
+
+{% endblock %}
